@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Interactive Gaming Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="logo">🎮 GameHub</h1>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#games" class="nav-link">Games</a></li>
+                    <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+                    <li><a href="#profile" class="nav-link">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to GameHub</h2>
+                <p>Play exciting games, compete with friends, and climb the leaderboard!</p>
+                <button class="btn btn-primary" onclick="scrollToGames()">Start Playing</button>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="games-section">
+            <h2>Choose Your Game</h2>
+            <div class="games-grid">
+                <!-- Memory Game -->
+                <div class="game-card">
+                    <div class="game-icon">🧠</div>
+                    <h3>Memory Match</h3>
+                    <p>Test your memory by matching pairs of cards</p>
+                    <button class="btn btn-secondary" onclick="startMemoryGame()">Play Now</button>
+                </div>
+
+                <!-- Snake Game -->
+                <div class="game-card">
+                    <div class="game-icon">🐍</div>
+                    <h3>Snake Game</h3>
+                    <p>Classic snake game - eat food and grow longer</p>
+                    <button class="btn btn-secondary" onclick="startSnakeGame()">Play Now</button>
+                </div>
+
+                <!-- Flappy Bird Clone -->
+                <div class="game-card">
+                    <div class="game-icon">🚀</div>
+                    <h3>Rocket Flight</h3>
+                    <p>Navigate through obstacles and fly as far as you can</p>
+                    <button class="btn btn-secondary" onclick="startRocketGame()">Play Now</button>
+                </div>
+
+                <!-- Quiz Game -->
+                <div class="game-card">
+                    <div class="game-icon">❓</div>
+                    <h3>Quiz Master</h3>
+                    <p>Answer trivia questions and earn points</p>
+                    <button class="btn btn-secondary" onclick="startQuizGame()">Play Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Modal -->
+        <div id="gameModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeGame()">&times;</span>
+                <div id="gameContainer"></div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="leaderboard-section">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-container">
+                <table id="leaderboardTable" class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Games Played</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile-section">
+            <h2>Your Profile</h2>
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="avatar">👤</div>
+                        <div class="profile-info">
+                            <h3 id="playerName">Guest Player</h3>
+                            <p id="playerLevel">Level 1</p>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-label">Total Score</span>
+                            <span class="stat-value" id="totalScore">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Games Played</span>
+                            <span class="stat-value" id="gamesPlayed">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Win Rate</span>
+                            <span class="stat-value" id="winRate">0%</span>
+                        </div>
+                    </div>
+                    <input type="text" id="playerNameInput" placeholder="Enter your name" class="profile-input">
+                    <button class="btn btn-primary" onclick="saveName()">Save Name</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 GameHub. All rights reserved. | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
